@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from 'src/app/core/models/user.model';
 
 @Component({
   selector: 'login',
@@ -7,5 +9,29 @@ import { Component } from '@angular/core';
 })
 
 export class LoginPage {
+  public loginEmail: string = '';
+  public loginPassword: string = '';
+
+
+  constructor(
+    private route: Router
+  ){
+
+  }
+
+  SignIn(){
+    var users = JSON.parse(localStorage.getItem('users') || '{}');
+
+    users.forEach((user: User) => {
+      console.log(user);
+      if(user.email == this.loginEmail && user.password == this.loginPassword){
+        console.log("SUCCES");
+        this.route.navigate(['/', 'form']);
+      }
+      else{
+        console.log("FAIL")
+      }
+    });
+  }
 
 }

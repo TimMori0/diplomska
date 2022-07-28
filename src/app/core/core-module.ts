@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -10,12 +11,14 @@ import { MatInputModule } from '@angular/material/input';
     imports: [
       CommonModule,
       MatSliderModule,
-      MatInputModule
+      MatInputModule,
+      FormsModule
     ],
     exports: [
       CommonModule,
       MatSliderModule,
-      MatInputModule
+      MatInputModule,
+      FormsModule
     ],
   })
   export class CoreModule {}

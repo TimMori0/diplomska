@@ -14,6 +14,20 @@ const routes: Routes = [
         (module) => module.LoginModule
       )
   },
+  {
+    path: 'sign-up',
+    loadChildren: () =>
+      import('./../modules/sign-up/sign-up.module').then(
+        (module) => module.SignInModule
+      )
+  },
+  {
+    path: 'form',
+    loadChildren: () =>
+      import('./../modules/purchasing-form/purchasing-form.module').then(
+        (module) => module.PurchasingFormModule
+      )
+  },
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-export class Vloga {
+export class Application {
     constructor(
       public fisrtname: string = '',
       public lastname: string = '',

@@ -1,1 +1,73 @@
-<div>hello</div>
+<div class="md:flex">
+    <!-- SIGN IN FORM -->
+    <div class="col-span-2 md:w-3/5">
+        <div class="flex flex-col h-screen justify-between">
+            <div></div>
+            <div class="text-center">
+                <div class="text-4xl mb-10">Welcome to <span class="font-semibold text-primaryGreen"> Avtoprevoznistvo Topler</span><span class="font-semibold">!</span></div>
+                <!-- INPUTS -->
+                <div class="grid grid-cols-2 gap-4 px-2">
+                    <div class="flex justify-end">
+                        <div class="text-sm w-1/2">
+                            <mat-form-field class="w-full rounded-md" appearance="fill">
+                                <mat-label>First Name</mat-label>
+                                <input matInput type="email" [(ngModel)]="firstName">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="text-sm w-1/2">
+                        <mat-form-field class="w-full rounded-md" appearance="fill">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput type="text" [(ngModel)]="lastName">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="text-sm">
+                    <mat-form-field class="w-1/2 rounded-md" appearance="fill">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput type="email" [(ngModel)]="email">
+                    </mat-form-field>
+                </div>
+                <div class="text-sm">
+                    <mat-form-field class="w-1/2 rounded-md" appearance="fill">
+                        <mat-label>Phone number</mat-label>
+                        <input matInput type="tel" [(ngModel)]="phoneNumber">
+                    </mat-form-field>
+                </div>
+                <div class="grid grid-cols-2 gap-4 px-2">
+                    <div class="flex justify-end">
+                        <div class="text-sm w-1/2">
+                            <mat-form-field class="w-full rounded-md" appearance="fill">
+                                <mat-label>Password</mat-label>
+                                <input matInput type="password" [(ngModel)]="password">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="text-sm w-1/2">
+                        <mat-form-field class="w-full rounded-md" appearance="fill">
+                            <mat-label>Reenter Password</mat-label>
+                            <input matInput type="password" [(ngModel)]="password2">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- BUTTON SIGN UP -->
+                <button class="mt-5 p-4 px-28 font-semibold bg-primaryGreen rounded-md text-white" (click)="SignUp()">Sign up and Explore Avtoprevozništvo Topler Web portal</button>
+            </div>
+            <div class="text-sm text-center mb-5">You agreed to Avtoprevoznistvo Topler <span class="hover:text-primaryGreen cursor-pointer">Terms of Services</span> and <span class="hover:text-primaryGreen cursor-pointer">Privacy Policy</span></div>
+        </div>
+    </div>
+    <!-- SIGN IN FORM -->
+    <div class="bg-[url('src/assets/images/greenBanner.png')] md:w-2/5">
+        <div class="grid h-screen place-items-center p-10 text-center">
+            <div class="text-white">
+                <div class="text-5xl font-medium">Already have an account</div>
+                <div class="mt-5 text-base">Dare to dream about tehnology we could come up with, about the world we could build together.</div>
+                <!-- BUTTON SIGN IN -->
+                <div class="my-10">
+                    <button class="p-4 px-28 font-semibold bg-white rounded-md text-primaryGreen" routerLink="../login">Sign in</button>
+                </div>
+                <img src="../../../../assets/images/planning_team_banner.png" width="300" class="mt-5 inline-block">
+            </div>
+        </div>
+    </div>
+</div>

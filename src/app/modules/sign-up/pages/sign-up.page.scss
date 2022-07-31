@@ -1,2 +1,7 @@
+::ng-deep .mat-focused .mat-form-field-label {
+    color: #46c423 !important;
+}
 
-  
+::ng-deep .mat-form-field-ripple {
+    background-color: #46c423 !important;
+}

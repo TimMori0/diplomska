@@ -22,7 +22,7 @@ const routes: Routes = [
       )
   },
   {
-    path: 'form',
+    path: 'form/:usertype',
     loadChildren: () =>
       import('./../modules/purchasing-form/purchasing-form.module').then(
         (module) => module.PurchasingFormModule

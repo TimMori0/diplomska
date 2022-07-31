@@ -15,23 +15,23 @@ export class LoginPage {
 
   constructor(
     private route: Router
-  ){
-
-  }
+  ){}
 
   SignIn(){
     var users = JSON.parse(localStorage.getItem('users') || '{}');
 
-    users.forEach((user: User) => {
-      console.log(user);
-      if(user.email == this.loginEmail && user.password == this.loginPassword){
-        console.log("SUCCES");
-        this.route.navigate(['/form', user.type]);
-      }
-      else{
-        console.log("FAIL")
-      }
-    });
+    if(users.length > 0){
+      users.forEach((user: User) => {
+        console.log(user);
+        if(user.email == this.loginEmail && user.password == this.loginPassword){
+          console.log("SUCCES");
+          this.route.navigate(['/form', user.type]);
+        }
+        else{
+          console.log("FAIL");
+        }
+      });
+    }
   }
 
 }

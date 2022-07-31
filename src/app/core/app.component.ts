@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserTypeEnum } from './enum/user-type.enum';
+import { Application } from './models/application.model';
 import { User } from './models/user.model';
-import { Vloga } from './models/vloga.model';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +13,13 @@ export class AppComponent implements OnInit {
   public admin: User = new User('Franc', 'Kranjc', 'franc.kranjc@gmail.com', 'admin' , '066895555', UserTypeEnum.Admin);
   public users: Array<User> = new Array<User>();
 
-  public vloge: Array<Vloga> = new Array<Vloga>();
+  public vloge: Array<Application> = new Array<Application>();
 
   ngOnInit(){
-    this.users.push(this.basic);
+  /*     this.users.push(this.basic);
     this.users.push(this.admin);
 
     localStorage.setItem('users', JSON.stringify(this.users));
-    localStorage.setItem('vloge', JSON.stringify(this.vloge));
+    localStorage.setItem('applications', JSON.stringify(this.vloge)); */
   }
 }

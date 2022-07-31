@@ -1,0 +1,27 @@
+<!-- SIDEMENU -->
+<aside class="flex flex-col p-6 fixed z-10 h-full bg-primaryBackgroundMenu mt-16 text-white">
+  <!-- ADMIN USER MENU -->
+  <div *ngIf="userType == 'admin'">
+
+  </div>
+  <!-- BASIC USER MENU -->
+  <div *ngIf="userType == 'basic'">
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover">
+      <span class="material-icons mr-2">add</span>
+      <div class="pr-2">New Applications</div>
+    </div>
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover">
+      <span class="material-icons mr-2">text_snippet</span>
+      <div class="pr-2">New Applications</div>
+    </div>
+  </div>
+</aside>
+<aside class="p-5 fixed z-20 w-full bg-primaryGreen">
+  <div class="flex justify-between text-white">
+    <div class="font-semibold text-lg">Avtoprevozništvo Topler Web portal</div>
+    <div class="flex font-semibold relative top-0.5 cursor-pointer" (click)="SignOut()">
+      <div class="mr-2">Log out</div>
+      <span class="material-icons mr-2 font-semibold">logout</span>
+    </div>
+  </div>
+</aside>

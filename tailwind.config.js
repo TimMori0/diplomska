@@ -3,7 +3,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primaryGreen: "#46c423"
+        primaryGreen: "#46c423",
+        primaryBackgroundMenu: "#575758",
+        primaryBackgroundMenuHover: "#3b3c3d"
       }
     },
   },

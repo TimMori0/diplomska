@@ -25,7 +25,7 @@ export class LoginPage {
         console.log(user);
         if(user.email == this.loginEmail && user.password == this.loginPassword){
           console.log("SUCCES");
-          this.route.navigate(['/form', user.type]);
+          this.route.navigate(['/home', user.type]);
         }
         else{
           console.log("FAIL");

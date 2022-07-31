@@ -1,5 +1,5 @@
 <!-- SIDEMENU -->
-<aside class="flex flex-col p-6 fixed z-10 h-full bg-primaryBackgroundMenu mt-16 text-white">
+<aside class="flex flex-col p-6 fixed z-10 h-full bg-primaryBackgroundMenu mt-16 text-white font-medium">
   <!-- ADMIN USER MENU -->
   <div *ngIf="userType == 'admin'">
 
@@ -7,11 +7,11 @@
   <!-- BASIC USER MENU -->
   <div *ngIf="userType == 'basic'">
     <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover">
-      <span class="material-icons mr-2">add</span>
+      <span class="material-icons mr-2 font-medium">add</span>
       <div class="pr-2">New Applications</div>
     </div>
     <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover">
-      <span class="material-icons mr-2">text_snippet</span>
+      <span class="material-icons mr-2 font-medium">text_snippet</span>
       <div class="pr-2">New Applications</div>
     </div>
   </div>

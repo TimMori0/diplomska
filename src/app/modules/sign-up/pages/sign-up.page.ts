@@ -37,7 +37,7 @@ export class SignUpPage {
 
       localStorage.setItem('users', JSON.stringify(users));
 
-      this.route.navigate(['/form', this.newUser.type]);
+      this.route.navigate(['/home', this.newUser.type]);
       console.log("SUCCES");
     }
     else{

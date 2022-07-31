@@ -22,10 +22,10 @@ const routes: Routes = [
       )
   },
   {
-    path: 'form/:usertype',
+    path: 'home/:usertype',
     loadChildren: () =>
-      import('./../modules/purchasing-form/purchasing-form.module').then(
-        (module) => module.PurchasingFormModule
+      import('./../modules/home/home.module').then(
+        (module) => module.HomeModule
       )
   },
 ];

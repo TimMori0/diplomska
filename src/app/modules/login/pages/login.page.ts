@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/models/user.model';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'login',
@@ -14,7 +15,8 @@ export class LoginPage {
 
 
   constructor(
-    private route: Router
+    private route: Router,
+    private userService: UsersService
   ){}
 
   SignIn(){
@@ -25,7 +27,8 @@ export class LoginPage {
         console.log(user);
         if(user.email == this.loginEmail && user.password == this.loginPassword){
           console.log("SUCCES");
-          this.route.navigate(['/home', user.type]);
+          this.userService.setUser(user);
+          this.route.navigate(['/home']);
         }
         else{
           console.log("FAIL");

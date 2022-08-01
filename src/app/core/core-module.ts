@@ -8,6 +8,8 @@ import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { BaseLayoutComponent } from './components/base-layout/base-layout.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     declarations: [
@@ -20,7 +22,9 @@ import { MatNativeDateModule } from '@angular/material/core';
       MatInputModule,
       FormsModule,
       MatDatepickerModule,
-      MatNativeDateModule 
+      MatNativeDateModule,
+      MatExpansionModule,
+      MatIconModule
     ],
     exports: [
       CommonModule,
@@ -29,7 +33,9 @@ import { MatNativeDateModule } from '@angular/material/core';
       FormsModule,
       MatDatepickerModule,
       MatNativeDateModule,
-      BaseLayoutComponent
+      BaseLayoutComponent,
+      MatExpansionModule,
+      MatIconModule
     ],
   })
   export class CoreModule {}

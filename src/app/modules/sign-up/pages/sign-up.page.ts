@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserTypeEnum } from 'src/app/core/enum/user-type.enum';
 import { User } from 'src/app/core/models/user.model';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'sign-up',
@@ -20,7 +21,8 @@ export class SignUpPage {
   public newUser: User = new User();
 
   constructor(
-    private route: Router
+    private route: Router,
+    private userService: UsersService
   ){}
 
   SignUp(){
@@ -33,11 +35,15 @@ export class SignUpPage {
       this.newUser.type = UserTypeEnum.Basic;
 
       var users = JSON.parse(localStorage.getItem('users') || '{}');
+
+      this.newUser.id = users.length + 1;
+
+      this.userService.setUser(this.newUser);
       users.push(this.newUser);
 
       localStorage.setItem('users', JSON.stringify(users));
 
-      this.route.navigate(['/home', this.newUser.type]);
+      this.route.navigate(['/home']);
       console.log("SUCCES");
     }
     else{

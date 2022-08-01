@@ -1,0 +1,21 @@
+<div class="mr-5 mt-5">
+    <div *ngFor="let app of applications">
+        <mat-accordion class="example-headers-align" multi>
+            <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                {{app.firstname}} {{app.lastname}}, {{app.phonenumber}} - {{app.traveldistance}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-form-field appearance="fill">
+                <mat-label>First name</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Age</mat-label>
+                <input matInput type="number" min="1">
+            </mat-form-field>
+            </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+</div>

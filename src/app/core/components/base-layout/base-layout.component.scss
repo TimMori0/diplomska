@@ -1,0 +1,8 @@
+.content-body {
+    flex: 1;
+    top: 85px;
+    left: 250px;
+    max-width: calc(100% - 250px);
+    overflow-x: overlay;
+    position: relative;
+  }

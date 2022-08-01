@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../../models/user.model';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'sidemenu',
@@ -11,8 +13,12 @@ export class SidemenuComponent implements OnInit{
 
   constructor(
     private route: Router,
-    private activatedRoute: ActivatedRoute
-  ){}
+    private usersService: UsersService
+  ){
+    usersService.user.subscribe((result: User) => {
+      this.userType = result.type;
+  });
+  }
 
   SignOut(){
     console.log("SUCCES");
@@ -20,10 +26,6 @@ export class SidemenuComponent implements OnInit{
   }
   
   ngOnInit(){
-    this.activatedRoute.paramMap.subscribe(params => { 
-      this.userType = params.get('usertype'); 
-    });
-
     console.log(this.userType);
   }
 }

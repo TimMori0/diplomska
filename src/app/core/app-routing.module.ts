@@ -22,7 +22,7 @@ const routes: Routes = [
       )
   },
   {
-    path: 'home/:usertype',
+    path: 'home',
     loadChildren: () =>
       import('./../modules/home/home.module').then(
         (module) => module.HomeModule

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from 'src/app/core/services/menu.service';
 
 @Component({
   selector: 'home',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 
 export class HomePage {
+  public menuPage: string = "";
+
+  constructor(
+    private menuService: MenuService
+  ){
+    menuService.menu.subscribe((result: string) => {
+      this.menuPage = result;
+    });
+  }
 }

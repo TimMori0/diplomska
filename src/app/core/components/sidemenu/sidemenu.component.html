@@ -6,13 +6,13 @@
   </div>
   <!-- BASIC USER MENU -->
   <div *ngIf="userType == 'basic'">
-    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover">
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="changeContent('new-application')">
       <span class="material-icons mr-2 font-medium">add</span>
       <div class="pr-2">New Applications</div>
     </div>
-    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover">
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="changeContent('applications')">
       <span class="material-icons mr-2 font-medium">text_snippet</span>
-      <div class="pr-2">New Applications</div>
+      <div class="pr-2">Applications</div>
     </div>
   </div>
 </aside>

@@ -1,6 +1,11 @@
 <base-layout>
-  <div class="">
-    <div class="font-bold text-2xl p-4">Applications</div>
-    <applications ></applications>
+  <!-- Content projection -->
+  <div *ngIf="menuPage == 'applications'">
+    <div class="font-extrabold text-2xl p-4">Applications</div>
+    <applications></applications>
+  </div>
+  <div *ngIf="menuPage == 'new-application'">
+    <div class="font-extrabold text-2xl p-4">New Application</div>
+    <new-application></new-application>
   </div>
 </base-layout>

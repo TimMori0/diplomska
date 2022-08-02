@@ -9,7 +9,7 @@ export class Application {
       public phonenumber: string = '',
       public numberofpersons: number = 0,
       public date: string = '',
-      public traveldistance: string = '',
+      public travelroute: string = '',
       public description: string = '',
       public status: ApplicationStatusEnum = ApplicationStatusEnum.Sent
     ) {}

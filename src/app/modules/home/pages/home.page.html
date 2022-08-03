@@ -8,4 +8,8 @@
     <div class="font-extrabold text-2xl p-4">New Application</div>
     <new-application></new-application>
   </div>
+  <div *ngIf="menuPage == 'confirmed-applications'">
+    <div class="font-extrabold text-2xl p-4">Confirmed applications</div>
+    <new-application></new-application>
+  </div>
 </base-layout>

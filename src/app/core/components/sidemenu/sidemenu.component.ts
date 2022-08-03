@@ -19,6 +19,7 @@ export class SidemenuComponent implements OnInit{
     private menuService: MenuService
   ){
     usersService.user.subscribe((result: User) => {
+      console.log(result)
       this.userType = result.type;
     });
   }

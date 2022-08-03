@@ -42,7 +42,7 @@ export class NewApplicationsComponent {
   }
 
   addApplication(){
-    this.application = new Application(this.applications.length + 1, this.user.fisrtname, this.user.lastname, this.user.email, this.user.phonenumber,
+    this.application = new Application(this.applications.length + 1, this.user.firstname, this.user.lastname, this.user.email, this.user.phonenumber,
       this.numberOfPassangers, this.startDate, this.travelRoute, this.description, ApplicationStatusEnum.Sent);
 
     this.applicationService.addApplication(this.application);

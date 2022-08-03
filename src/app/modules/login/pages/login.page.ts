@@ -28,6 +28,9 @@ export class LoginPage {
         if(user.email == this.loginEmail && user.password == this.loginPassword){
           console.log("SUCCES");
           this.userService.setUser(user);
+
+          localStorage.setItem('lastLoggedUser', JSON.stringify(user));
+
           this.route.navigate(['/home']);
         }
         else{

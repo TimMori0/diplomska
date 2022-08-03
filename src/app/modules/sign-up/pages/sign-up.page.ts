@@ -27,7 +27,7 @@ export class SignUpPage {
 
   SignUp(){
     if(this.password == this.password2){
-      this.newUser.fisrtname = this.firstName;
+      this.newUser.firstname = this.firstName;
       this.newUser.lastname = this.lastName;
       this.newUser.email = this.email;
       this.newUser.phonenumber = this.phoneNumber;

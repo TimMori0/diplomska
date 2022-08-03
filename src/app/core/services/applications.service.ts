@@ -23,4 +23,14 @@ export class ApplicationsService {
         const tmp = JSON.parse(localStorage.getItem('applications') || '{}');
         this.applicationsSubject.next(tmp);
     }
+
+    addApplication(application: Application){
+        var tmp: Array<Application> = new Array<Application>();
+        this.applications.subscribe((result: Array<Application>) => {
+            tmp = result;
+        });
+
+        tmp.push(application);
+        this.applicationsSubject.next(tmp);
+    }
 }

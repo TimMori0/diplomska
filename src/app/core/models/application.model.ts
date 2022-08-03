@@ -7,7 +7,7 @@ export class Application {
       public lastname: string = '',
       public email: string = '',
       public phonenumber: string = '',
-      public numberofpersons: number = 0,
+      public numberofpassengers: number = 0,
       public date: string = '',
       public travelroute: string = '',
       public description: string = '',

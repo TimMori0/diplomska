@@ -10,6 +10,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { TextFieldModule } from '@angular/cdk/text-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     declarations: [
@@ -24,7 +26,9 @@ import { MatIconModule } from '@angular/material/icon';
       MatDatepickerModule,
       MatNativeDateModule,
       MatExpansionModule,
-      MatIconModule
+      MatIconModule,
+      TextFieldModule,
+      MatSelectModule
     ],
     exports: [
       CommonModule,
@@ -35,7 +39,9 @@ import { MatIconModule } from '@angular/material/icon';
       MatNativeDateModule,
       BaseLayoutComponent,
       MatExpansionModule,
-      MatIconModule
+      MatIconModule,
+      TextFieldModule,
+      MatSelectModule
     ],
   })
   export class CoreModule {}

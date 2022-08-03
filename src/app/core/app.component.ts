@@ -3,6 +3,7 @@ import { ApplicationStatusEnum } from './enum/application-status.enum';
 import { UserTypeEnum } from './enum/user-type.enum';
 import { Application } from './models/application.model';
 import { User } from './models/user.model';
+import { MenuService } from './services/menu.service';
 import { UsersService } from './services/users.service';
 
 @Component({
@@ -22,7 +23,8 @@ export class AppComponent implements OnInit {
   public applications: Array<Application> = new Array<Application>();
 
   constructor(
-    private userService: UsersService
+    private userService: UsersService,
+    private menuService: MenuService
   ){
 
   }
@@ -40,5 +42,12 @@ export class AppComponent implements OnInit {
 
     this.lastLoggedUser = JSON.parse(localStorage.getItem('lastLoggedUser') || '{}');
     this.userService.setUser(this.lastLoggedUser);
+
+    if(this.lastLoggedUser.type == 'admin'){
+      this.menuService.setMenuPage('all-application');
+    }
+    else{
+      this.menuService.setMenuPage('applications')
+    }
   }
 }

@@ -1,0 +1,86 @@
+<div class="mr-20 mt-5 m-14">
+    <!-- List of applications is not Empty -->
+    <div *ngIf="applications.length > 0">
+        <div *ngFor="let app of applications">
+            <mat-accordion multi>
+                <mat-expansion-panel>
+                    <!-- Accordion header -->
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="max-w-xs">
+                            <div>
+                                {{app.firstname}} {{app.lastname}}, {{app.phonenumber}} - 
+                            </div>
+                            <div class="font-medium">
+                                {{app.travelroute}}
+                            </div>
+                        </mat-panel-title>
+                        <mat-panel-description class="justify-between pr-10">
+                            <div>
+                                Passengers: {{app.numberofpassengers}} / Date {{app.date}}
+                            </div>
+                            <div *ngIf="app.status == 1" class="text-orange-500 font-medium">
+                                Sent
+                            </div>
+                            <div *ngIf="app.status == 2" class="text-blue-500 font-medium">
+                                Processing
+                            </div>
+                            <div *ngIf="app.status == 3" class="text-green-500 font-medium">
+                                Aceppted
+                            </div>
+                            <div *ngIf="app.status == 4" class="text-red-500 font-medium">
+                                Declined
+                            </div>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <!-- Accordion body -->
+                    <div class="">
+                        <div class="flex">
+                            <!-- Pro forma Invoice data -->
+                            <div class="w-1/2">
+                                <div class="font-bold text-base mb-3">Pro forma invoice</div>
+                                <div class="ml-2 flex">
+                                    <div>
+                                        <div>{{app.firstname}} {{app.lastname}}</div>
+                                        <div><span class="font-medium">Persons:</span> {{app.numberofpassengers}}</div>
+                                        <div><span class="font-medium">Date:</span> {{app.date}}</div>
+                                        <div><span class="font-medium">Travel Route:</span> {{app.travelroute}}</div>
+                                        <div><span class="font-medium">Description:</span> {{app.description}}</div>
+                                    </div>
+                                    <div class="ml-20">
+                                        <div><span class="font-medium">Vehicle:</span> Ford Transit 2019</div>
+                                        <div><span class="font-medium">Distance:</span> 10km</div>
+                                        <div><span class="font-medium">Discount:</span> 5 %</div>
+                                    </div>
+                                    <div class="grid content-end text-white">
+                                        <div class="underline underline-offset-4 bg-primaryGreen p-2 rounded"><span class="font-medium">Price: </span> <span class="text-base">1250€</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Responsible person data -->
+                            <div class="w-1/2">
+                                <div class="font-bold text-base mb-3">Responsible person</div>
+                                <div class="ml-2">
+                                    <div class="font-semibold">Matic Mori</div>
+                                    <div>Phone: 041-434-356</div>
+                                    <a href="mailto:matic@avtoprevoznistvo-topler.eu">E-mail: <span class="hover:text-primaryGreen hover:font-semibold">matic@avtoprevoznistvo-topler.eu</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end text-xs">
+                            <div class="bg-blue-500 text-white rounded p-2 px-3 cursor-pointer mr-3">Edit</div>
+                            <div class="bg-red-500 text-white rounded p-2 px-3 cursor-pointer mr-3">Delete</div>
+                            <div class="bg-primaryGreen text-white rounded p-2 cursor-pointer px-3">Accept</div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+    </div>
+    <!-- List of applications is Empty -->
+    <div *ngIf="applications.length == 0">
+        <div class="grid place-items-center text-center mt-20">
+            <span class="material-icons font-medium text-8xl text-primaryBackgroundMenu">content_paste_off</span>
+            <div class="mt-4">You don't have any submitted application.<br>Go to New Applications and submit new one.</div>
+        </div>
+    </div>
+</div>

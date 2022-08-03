@@ -1,5 +1,6 @@
 <base-layout>
   <!-- Content projection -->
+  <!-- Basic User -->
   <div *ngIf="menuPage == 'applications'">
     <div class="font-extrabold text-2xl p-4">Applications</div>
     <applications></applications>
@@ -8,8 +9,21 @@
     <div class="font-extrabold text-2xl p-4">New Application</div>
     <new-application></new-application>
   </div>
-  <div *ngIf="menuPage == 'confirmed-applications'">
+  <!-- Admin User -->
+  <div *ngIf="menuPage == 'pending'">
+    <div class="font-extrabold text-2xl p-4">Pending applications</div>
+    <admin-applications></admin-applications>
+  </div>
+  <div *ngIf="menuPage == 'in-proces'">
+    <div class="font-extrabold text-2xl p-4">Applications in processing</div>
+    <admin-applications></admin-applications>
+  </div>
+  <div *ngIf="menuPage == 'confirmed'">
     <div class="font-extrabold text-2xl p-4">Confirmed applications</div>
-    <new-application></new-application>
+    <admin-applications></admin-applications>
+  </div>
+  <div *ngIf="menuPage == 'all-application'">
+    <div class="font-extrabold text-2xl p-4">All applications</div>
+    <admin-applications></admin-applications>
   </div>
 </base-layout>

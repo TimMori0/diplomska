@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/models/user.model';
+import { MenuService } from 'src/app/core/services/menu.service';
 import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class LoginPage {
 
   constructor(
     private route: Router,
-    private userService: UsersService
+    private userService: UsersService,
+    private menuService: MenuService
   ){}
 
   SignIn(){
@@ -30,6 +32,13 @@ export class LoginPage {
           this.userService.setUser(user);
 
           localStorage.setItem('lastLoggedUser', JSON.stringify(user));
+
+          if(user.type == 'admin'){
+            this.menuService.setMenuPage('all-application');
+          }
+          else{
+            this.menuService.setMenuPage('applications')
+          }
 
           this.route.navigate(['/home']);
         }

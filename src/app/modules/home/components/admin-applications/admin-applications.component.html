@@ -1,7 +1,7 @@
 <div class="mr-20 mt-5 m-14">
     <!-- List of applications is not Empty -->
     <div *ngIf="applications.length > 0">
-        <div *ngFor="let app of applications">
+        <div *ngFor="let app of filteredApplications">
             <mat-accordion multi>
                 <mat-expansion-panel>
                     <!-- Accordion header -->
@@ -77,10 +77,10 @@
         </div>
     </div>
     <!-- List of applications is Empty -->
-    <div *ngIf="applications.length == 0">
+    <div *ngIf="applicationsLength == 0">
         <div class="grid place-items-center text-center mt-20">
             <span class="material-icons font-medium text-8xl text-primaryBackgroundMenu">content_paste_off</span>
-            <div class="mt-4">You don't have any submitted application.<br>Go to New Applications and submit new one.</div>
+            <div class="mt-4">No submitted application. Try again later.</div>
         </div>
     </div>
 </div>

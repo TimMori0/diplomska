@@ -24,7 +24,7 @@ export class SidemenuComponent implements OnInit{
     });
   }
 
-  changeContent(page: string){
+  ChangeContent(page: string){
     this.menuService.setMenuPage(page);
   }
 

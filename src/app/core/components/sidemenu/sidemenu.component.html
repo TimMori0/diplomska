@@ -3,30 +3,30 @@
   <!-- ADMIN USER MENU -->
   <div *ngIf="userType == 'admin'">
     <div class="text-lg pb-3">Applications</div>
-    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="changeContent('pending')">
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="ChangeContent('pending')">
       <span class="material-icons mr-2 font-medium text-orange-500">text_snippet</span>
       <div class="pr-2">Pending</div>
     </div>
-    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="changeContent('in-proces')">
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="ChangeContent('in-proces')">
       <span class="material-icons mr-2 font-medium text-blue-500">text_snippet</span>
       <div class="pr-2">In Processing</div>
     </div>
-    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="changeContent('confirmed')">
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="ChangeContent('confirmed')">
       <span class="material-icons mr-2 font-medium text-primaryGreen">text_snippet</span>
       <div class="pr-2">Confirmed</div>
     </div>
-    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="changeContent('all-application')">
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="ChangeContent('all-application')">
       <span class="material-icons mr-2 font-medium">text_snippet</span>
       <div class="pr-2 mr-4 relative top-0.5">All Applications</div>
     </div>
   </div>
   <!-- BASIC USER MENU -->
   <div *ngIf="userType == 'basic'">
-    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="changeContent('new-application')">
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="ChangeContent('new-application')">
       <span class="material-icons mr-2 font-medium">note_add</span>
       <div class="pr-2 relative top-0.5">New Applications</div>
     </div>
-    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="changeContent('applications')">
+    <div class="flex p-2 mb-3 rounded cursor-pointer hover:bg-primaryBackgroundMenuHover" (click)="ChangeContent('applications')">
       <span class="material-icons mr-2 font-medium">text_snippet</span>
       <div class="pr-2">Applications</div>
     </div>

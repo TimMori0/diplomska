@@ -23,7 +23,6 @@ export class AdminApplicationsComponent implements OnInit{
     }
 
     ngOnInit(){
-      console.log('kle12344okej = ', this.page)
       this.ChangeListOfApplications(this.page);
     }
 

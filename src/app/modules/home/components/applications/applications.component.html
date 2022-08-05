@@ -16,7 +16,7 @@
                         </mat-panel-title>
                         <mat-panel-description class="justify-between pr-10">
                             <div>
-                                Passengers: {{app.numberofpassengers}} / Date {{app.date}}
+                                Passengers: {{app.numberofpassengers}} / Date  {{app.startdate}} - {{app.startdate}}
                             </div>
                             <div *ngIf="app.status == 1" class="text-orange-500 font-medium">
                                 Sent
@@ -42,7 +42,7 @@
                                     <div>
                                         <div>{{app.firstname}} {{app.lastname}}</div>
                                         <div><span class="font-medium">Persons:</span> {{app.numberofpassengers}}</div>
-                                        <div><span class="font-medium">Date:</span> {{app.date}}</div>
+                                        <div><span class="font-medium">Date:</span> {{app.startdate}} - {{app.startdate}}</div>
                                         <div><span class="font-medium">Travel Route:</span> {{app.travelroute}}</div>
                                         <div><span class="font-medium">Description:</span> {{app.description}}</div>
                                     </div>

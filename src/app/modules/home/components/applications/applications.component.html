@@ -7,16 +7,13 @@
                     <!-- Accordion header -->
                     <mat-expansion-panel-header>
                         <mat-panel-title class="max-w-xs">
-                            <div *ngIf="user.type == 'admin'">
-                                {{app.firstname}} {{app.lastname}}, {{app.phonenumber}} - 
-                            </div>
-                            <div class="font-medium">
+                            <div class="font-medium text-ellipsis overflow-hidden whitespace-nowrap break-all">
                                 {{app.travelroute}}
                             </div>
                         </mat-panel-title>
                         <mat-panel-description class="justify-between pr-10">
                             <div>
-                                Passengers: {{app.numberofpassengers}} / Date  {{app.startdate}} - {{app.startdate}}
+                                {{app.transporttype}} / Date  {{app.startdate}} - {{app.startdate}}
                             </div>
                             <div *ngIf="app.status == 1" class="text-orange-500 font-medium">
                                 Sent
@@ -33,43 +30,90 @@
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <!-- Accordion body -->
-                    <div class="">
-                        <div class="flex">
-                            <!-- Pro forma Invoice data -->
-                            <div class="w-1/2">
-                                <div class="font-bold text-base mb-3">Pro forma invoice</div>
-                                <div class="ml-2 flex">
-                                    <div>
-                                        <div>{{app.firstname}} {{app.lastname}}</div>
-                                        <div><span class="font-medium">Persons:</span> {{app.numberofpassengers}}</div>
-                                        <div><span class="font-medium">Date:</span> {{app.startdate}} - {{app.startdate}}</div>
-                                        <div><span class="font-medium">Travel Route:</span> {{app.travelroute}}</div>
-                                        <div><span class="font-medium">Description:</span> {{app.description}}</div>
-                                    </div>
-                                    <div class="ml-20">
-                                        <div><span class="font-medium">Vehicle:</span> Ford Transit 2019</div>
-                                        <div><span class="font-medium">Distance:</span> 10km</div>
-                                        <div><span class="font-medium">Discount:</span> 5 %</div>
-                                    </div>
-                                    <div class="grid content-end text-white">
-                                        <div class="underline underline-offset-4 bg-primaryGreen p-2 rounded"><span class="font-medium">Price: </span> <span class="text-base">1250€</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Responsible person data -->
-                            <div class="w-1/2">
-                                <div class="font-bold text-base mb-3">Responsible person</div>
-                                <div class="ml-2">
-                                    <div class="font-semibold">Matic Mori</div>
-                                    <div>Phone: 041-434-356</div>
-                                    <a href="mailto:matic@avtoprevoznistvo-topler.eu">E-mail: <span class="hover:text-primaryGreen hover:font-semibold">matic@avtoprevoznistvo-topler.eu</span></a>
-                                </div>
-                            </div>
+                    <div>
+                        <!-- First row-->
+                        <div class="font-semibold ml-3 mb-3 text-lg">User information</div>
+                        <div class="mx-6 flex gap-3">
+                            <mat-form-field class="w-1/4 rounded-md text-sm" appearance="fill">
+                                <mat-label>First name</mat-label>
+                                <input matInput type="text" [ngModel]="app.firstname">
+                            </mat-form-field>
+                            <mat-form-field class="w-1/4 rounded-md text-sm" appearance="fill">
+                                <mat-label>Last name</mat-label>
+                                <input matInput type="text" [ngModel]="app.lastname">
+                            </mat-form-field>
+                            <mat-form-field class="w-1/4 rounded-md text-sm" appearance="fill">
+                                <mat-label>Phone number</mat-label>
+                                <input matInput type="text" [ngModel]="app.phonenumber">
+                            </mat-form-field>
+                            <mat-form-field class="w-1/4 rounded-md text-sm" appearance="fill">
+                                <mat-label>E-mail</mat-label>
+                                <input matInput type="text" [ngModel]="app.email">
+                            </mat-form-field>
                         </div>
-                        <div class="flex justify-end text-xs">
-                            <div class="bg-blue-500 text-white rounded p-2 px-3 cursor-pointer mr-3">Edit</div>
-                            <div class="bg-red-500 text-white rounded p-2 px-3 cursor-pointer mr-3">Delete</div>
-                            <div class="bg-primaryGreen text-white rounded p-2 cursor-pointer px-3">Accept</div>
+                        <!-- Second row -->
+                        <div class="font-semibold ml-3 mb-3 text-lg">Transport information</div>
+                        <div class="mx-6 flex gap-3">
+                            <mat-form-field class="w-1/3 rounded-md text-sm" appearance="fill">
+                                <mat-label>Passangers</mat-label>
+                                <input matInput type="number" [ngModel]="app.numberofpassengers">
+                            </mat-form-field>
+                            <!-- POPRAVI DATE NEMORE BIT TEXT INPUT AMPAK NAREDI NA PICK DATE -->
+                            <mat-form-field class="w-1/3 rounded-md text-sm" appearance="fill">
+                                <mat-label>Date</mat-label>
+                                <input matInput type="text" [ngModel]="app.startdate + ' - ' + app.startdate" disabled="true">
+                            </mat-form-field>
+<!--                             <mat-form-field class="w-1/2 rounded-md text-sm" appearance="fill">
+                                <mat-label>Date</mat-label>
+                                <mat-date-range-input [rangePicker]="picker">
+                                  <input matStartDate placeholder="Start date" [(ngModel)]="app.startdate">
+                                  <input matEndDate placeholder="End date" [(ngModel)]="app.enddate">
+                                </mat-date-range-input>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-date-range-picker #picker></mat-date-range-picker>
+                            </mat-form-field> -->
+                        </div>
+                        <!-- Third row -->
+                        <div class="mx-6 flex gap-3">
+                            <mat-form-field class="w-full rounded-md text-sm" appearance="fill">
+                                <mat-label>Travel Route</mat-label>
+                                <textarea 
+                                    matInput
+                                    cdkTextareaAutosize
+                                    #autosize="cdkTextareaAutosize"
+                                    cdkAutosizeMinRows="1"
+                                    cdkAutosizeMaxRows="10"
+                                    [(ngModel)]="app.travelroute"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="w-full rounded-md text-sm" appearance="fill">
+                                <mat-label>Description</mat-label>
+                                <textarea
+                                    matInput
+                                    cdkTextareaAutosize
+                                    #autosize="cdkTextareaAutosize"
+                                    cdkAutosizeMinRows="1"
+                                    cdkAutosizeMaxRows="10"
+                                    [(ngModel)]="app.description"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <!-- Fourth row -->
+                        <div class="font-semibold ml-3 mb-3 text-lg">Pro forma invoice</div>
+                        <div class="ml-3 flex gap-3">
+                            <mat-form-field class="w-1/3 rounded-md text-sm" appearance="fill">
+                                <mat-label>Vehicle</mat-label>
+                                <input matInput type="text" [ngModel]="app.vehicle">
+                            </mat-form-field>
+                            <mat-form-field class="w-1/3 rounded-md text-sm" appearance="fill">
+                                <mat-label>Discount - %</mat-label>
+                                <input matInput type="number" [ngModel]="app.discount">
+                            </mat-form-field>
+                            <mat-form-field class="w-1/3 rounded-md text-sm" appearance="fill">
+                                <mat-label>Price - €</mat-label>
+                                <input matInput type="number" [ngModel]="app.price">
+                            </mat-form-field>
+                        </div>
+                        <div class="flex justify-end">
+                            <div class="bg-primaryGreen text-white rounded p-3 px-4 cursor-pointer">Save and Send</div>
                         </div>
                     </div>
                 </mat-expansion-panel>

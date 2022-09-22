@@ -42,6 +42,7 @@ export class NewApplicationsComponent {
   }
 
   addApplication(){
+    console.log(this.user);
     this.application = new Application(this.applications.length + 1, this.user.firstname, this.user.lastname, this.user.email, this.user.phonenumber,
       this.numberOfPassangers, this.startDate, this.endDate, this.travelRoute, this.description, ApplicationStatusEnum.Sent);
 

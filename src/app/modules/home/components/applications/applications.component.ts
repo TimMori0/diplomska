@@ -23,7 +23,14 @@ export class ApplicationsComponent {
         userService.user.subscribe((result: User) => {
             this.user = result;
         });
+    }
 
-        console.log(this.applications)
+    deleteApplication(id: number){
+        this.applications.splice(id-1, 1);
+        this.applicationsService.saveApplications(this.applications);
+    }
+
+    saveAndSendApplication(){
+        
     }
 }

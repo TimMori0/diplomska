@@ -28,6 +28,13 @@ const routes: Routes = [
         (module) => module.HomeModule
       )
   },
+  {
+    path: 'new-application',
+    loadChildren: () =>
+      import('./../modules/guest-new-application/guest-new-application.module').then(
+        (module) => module.GuestNewApplicationModule
+      )
+  },
 ];
 
 @NgModule({

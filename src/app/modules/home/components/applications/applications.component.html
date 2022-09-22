@@ -101,19 +101,20 @@
                         <div class="ml-3 flex gap-3">
                             <mat-form-field class="w-1/3 rounded-md text-sm" appearance="fill">
                                 <mat-label>Vehicle</mat-label>
-                                <input matInput type="text" [ngModel]="app.vehicle">
+                                <input matInput type="text" [ngModel]="app.vehicle" disabled="true">
                             </mat-form-field>
                             <mat-form-field class="w-1/3 rounded-md text-sm" appearance="fill">
                                 <mat-label>Discount - %</mat-label>
-                                <input matInput type="number" [ngModel]="app.discount">
+                                <input matInput type="number" [ngModel]="app.discount" disabled="true">
                             </mat-form-field>
                             <mat-form-field class="w-1/3 rounded-md text-sm" appearance="fill">
                                 <mat-label>Price - €</mat-label>
-                                <input matInput type="number" [ngModel]="app.price">
+                                <input matInput type="number" [ngModel]="app.price" disabled="true">
                             </mat-form-field>
                         </div>
                         <div class="flex justify-end">
-                            <div class="bg-primaryGreen text-white rounded p-3 px-4 cursor-pointer">Save and Send</div>
+                            <div class="bg-red-500 text-white rounded p-3 px-4 cursor-pointer mr-3" (click)="deleteApplication(app.id)">Delete</div>
+                            <div class="bg-primaryGreen text-white rounded p-3 px-4 cursor-pointer" (click)="saveAndSendApplication()">Save and Send</div>
                         </div>
                     </div>
                 </mat-expansion-panel>

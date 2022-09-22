@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.users.push(this.basic);
+    /* this.users.push(this.basic);
     this.users.push(this.admin);
 
     this.applications.push(this.application1);
@@ -39,9 +39,9 @@ export class AppComponent implements OnInit {
     this.applications.push(this.application3);
 
     localStorage.setItem('users', JSON.stringify(this.users));
-    localStorage.setItem('applications', JSON.stringify(this.applications));
+    localStorage.setItem('applications', JSON.stringify(this.applications));*/
 
-    this.lastLoggedUser = JSON.parse(localStorage.getItem('lastLoggedUser') || '{}');
+    this.lastLoggedUser = JSON.parse(localStorage.getItem('lastLoggedUser') || '{}'); 
     this.userService.setUser(this.lastLoggedUser);
 
     if(this.lastLoggedUser.type == 'admin'){

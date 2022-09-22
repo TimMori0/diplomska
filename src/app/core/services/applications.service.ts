@@ -32,5 +32,10 @@ export class ApplicationsService {
 
         tmp.push(application);
         this.applicationsSubject.next(tmp);
+        localStorage.setItem('applications', JSON.stringify(tmp));
+    }
+
+    saveApplications(applications: Array<Application>){
+        localStorage.setItem('applications', JSON.stringify(applications));
     }
 }

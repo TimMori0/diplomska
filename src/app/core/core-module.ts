@@ -12,6 +12,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatSelectModule } from '@angular/material/select';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -43,5 +44,6 @@ import { MatSelectModule } from '@angular/material/select';
       TextFieldModule,
       MatSelectModule
     ],
+    providers: [DatePipe],
   })
   export class CoreModule {}

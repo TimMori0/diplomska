@@ -12,11 +12,13 @@ import { UsersService } from 'src/app/core/services/users.service';
 export class ApplicationsComponent {
     public applications: Array<Application> = new Array<Application>();
     public user: User = new User();
+
     constructor(
         private applicationsService: ApplicationsService,
         private userService: UsersService
     ){
         applicationsService.applications.subscribe((result: Array<Application>) => {
+            console.log(result);
             this.applications = result;
         });
 

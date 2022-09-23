@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApplicationStatusEnum } from 'src/app/core/enum/application-status.enum';
@@ -30,7 +31,8 @@ export class NewApplicationsComponent {
     private userService: UsersService,
     private applicationService: ApplicationsService,
     private menuService: MenuService,
-    private route: Router
+    private route: Router,
+    private datePipe: DatePipe
   ){
     userService.user.subscribe((result: User) => {
       this.user = result;
@@ -44,10 +46,14 @@ export class NewApplicationsComponent {
   addApplication(){
     console.log(this.user);
     this.application = new Application(this.applications.length + 1, this.user.firstname, this.user.lastname, this.user.email, this.user.phonenumber,
-      this.numberOfPassangers, this.startDate, this.endDate, this.travelRoute, this.description, ApplicationStatusEnum.Sent);
+      this.numberOfPassangers, this.datePipe.transform(this.startDate, 'dd-MM-yyyy') || '', this.datePipe.transform(this.endDate, 'dd-MM-yyyy') || '', this.travelRoute, this.description, ApplicationStatusEnum.Sent);
 
     this.applicationService.addApplication(this.application);
 
+    this.menuService.setMenuPage("applications");
+  }
+
+  cancelApplication(){
     this.menuService.setMenuPage("applications");
   }
 }

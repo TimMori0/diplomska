@@ -50,7 +50,7 @@
             [(ngModel)]="description"></textarea>
     </mat-form-field>
     <div class="flex justify-end">
-        <div class="bg-blue-500 text-white rounded p-2 px-3 cursor-pointer mr-3">Cancel</div>
+        <div class="bg-blue-500 text-white rounded p-2 px-3 cursor-pointer mr-3" (click)="cancelApplication()">Cancel</div>
         <div class="bg-primaryGreen text-white rounded p-2 cursor-pointer px-3" (click)="addApplication()">Send</div>
     </div>
 </div>

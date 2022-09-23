@@ -28,7 +28,12 @@ export class ApplicationsComponent {
     }
 
     deleteApplication(id: number){
-        this.applications.splice(id-1, 1);
+        this.applications.forEach((item, index)=>{
+            if(item.id == id)
+            {
+                this.applications.splice(index, 1);
+            }
+        });
         this.applicationsService.saveApplications(this.applications);
     }
 

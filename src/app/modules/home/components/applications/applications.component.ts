@@ -47,4 +47,10 @@ export class ApplicationsComponent {
 
         this.applicationsService.updateApplication(application);
     }
+
+    declineApplication(application: Application){
+        application.status = ApplicationStatusEnum.Declined;
+
+        this.applicationsService.updateApplication(application);
+    }
 }

@@ -45,7 +45,7 @@
                                 <input matInput type="text" [ngModel]="app.startdate + ' - ' + app.startdate" disabled="true">
                             </mat-form-field>
                         </div>
-                        <div *ngIf="page != 'confirmed' && page != 'all-application'; then thenBlock else elseBlock"></div>
+                        <div *ngIf="page != 'confirmed' && page != 'all-application' && page != 'in-proces'; then thenBlock else elseBlock"></div>
                         <ng-template #thenBlock>
                             <div class="ml-3 flex gap-3">
                                 <mat-form-field class="w-full rounded-md text-sm" appearance="fill">

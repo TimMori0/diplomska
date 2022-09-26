@@ -113,11 +113,12 @@
                                 <input matInput type="number" [ngModel]="app.price" disabled="true">
                             </mat-form-field>
                         </div>
-                        <div class="flex justify-end" *ngIf="app.status != 3 && app.status != 2">
+                        <div class="flex justify-end" *ngIf="app.status != 3 && app.status != 2 && app.status != 4">
                             <div class="bg-red-500 text-white rounded p-3 px-4 cursor-pointer mr-3" (click)="deleteApplication(app.id)">Delete</div>
                             <div class="bg-primaryGreen text-white rounded p-3 px-4 cursor-pointer" (click)="saveAndSendApplication()">Save and Send</div>
                         </div>
                         <div class="flex justify-end" *ngIf="app.status == 2">
+                            <div class="bg-red-500 text-white rounded p-3 px-4 cursor-pointer mr-3" (click)="declineApplication(app)">Decline</div>
                             <div class="bg-primaryGreen text-white rounded p-3 px-4 cursor-pointer" (click)="acceptApplication(app)">Accept</div>
                         </div>
                     </div>

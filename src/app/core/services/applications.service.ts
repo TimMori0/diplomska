@@ -38,4 +38,21 @@ export class ApplicationsService {
     saveApplications(applications: Array<Application>){
         localStorage.setItem('applications', JSON.stringify(applications));
     }
+
+    updateApplication(application: Application){
+        var tmp: Array<Application> = new Array<Application>();
+        this.applications.subscribe((result: Array<Application>) => {
+            tmp = result;
+        });
+
+        tmp.forEach((app) => {
+            if(app.id == application.id){
+                app.vehicle = application.vehicle;
+                app.discount = application.discount;
+                app.price = application.price;
+            }
+        });
+        this.applicationsSubject.next(tmp);
+        localStorage.setItem('applications', JSON.stringify(tmp));
+    }
 }

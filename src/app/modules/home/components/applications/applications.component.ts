@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApplicationStatusEnum } from 'src/app/core/enum/application-status.enum';
 import { Application } from 'src/app/core/models/application.model';
 import { User } from 'src/app/core/models/user.model';
 import { ApplicationsService } from 'src/app/core/services/applications.service';
@@ -39,5 +40,11 @@ export class ApplicationsComponent {
 
     saveAndSendApplication(){
         
+    }
+
+    acceptApplication(application: Application){
+        application.status = ApplicationStatusEnum.Accepted;
+
+        this.applicationsService.updateApplication(application);
     }
 }

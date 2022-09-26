@@ -14,6 +14,10 @@ export class AdminApplicationsComponent implements OnInit{
     public filteredApplications: Array<Application> = new Array<Application>();
     public applicationsLength: number = 0;
 
+    public vehicle: string = '';
+    public price: number = 0;
+    public discount: number = 0;
+
     constructor(
       private applicationsService: ApplicationsService
     ){
@@ -42,5 +46,14 @@ export class AdminApplicationsComponent implements OnInit{
       });
       
       this.applicationsLength = this.filteredApplications.length;
+    }
+
+    saveAndSave(application: Application){
+      application.vehicle = this.vehicle;
+      application.price = this.price;
+      application.discount = this.discount;
+      application.status = ApplicationStatusEnum.Processing;
+
+      this.applicationsService.updateApplication(application);
     }
 }

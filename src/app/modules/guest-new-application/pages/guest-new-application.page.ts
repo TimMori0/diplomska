@@ -22,6 +22,10 @@ export class GuestNewApplicationPage {
   public travelRoute: string = '';
   public description: string = '';
   public typeOfTransport: string = '';
+  public firstName: string = '';
+  public lastName: string = '';
+  public email: string = '';
+  public phoneNumber: string = '';
 
   public user: User = new User();
   public applications: Array<Application> = new Array<Application>();
@@ -37,20 +41,19 @@ export class GuestNewApplicationPage {
     userService.user.subscribe((result: User) => {
       this.user = result;
     });
-
-    applicationService.applications.subscribe((result: Array<Application>) => {
-      this.applications = result;
-    });
   }
 
   addApplication(){
     console.log(this.user);
-    this.application = new Application(this.applications.length + 1, this.user.firstname, this.user.lastname, this.user.email, this.user.phonenumber,
+    this.application = new Application(this.applications.length + 1, this.firstName, this.lastName, this.email, this.phoneNumber,
       this.numberOfPassangers, this.datePipe.transform(this.startDate, 'dd-MM-yyyy') || '', this.datePipe.transform(this.endDate, 'dd-MM-yyyy') || '', this.travelRoute, this.description, ApplicationStatusEnum.Sent);
 
-    this.applicationService.addApplication(this.application);
+    const tmp = JSON.parse(localStorage.getItem('guest-applications') || '{}');
+    this.applications.concat(tmp);
+    this.applications.push(this.application);
+    localStorage.setItem('guest-applications', JSON.stringify(this.applications));
 
-    this.menuService.setMenuPage("applications");
+    this.route.navigate(['']);
   }
 
   cancelApplication(){

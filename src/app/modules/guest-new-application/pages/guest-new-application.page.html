@@ -1,55 +1,83 @@
-<div class="mr-20 mt-5 m-14">
-    <!-- Inputs -->
-    <!-- First row -->
-    <div class="flex gap-4">
-        <mat-form-field class="w-1/2 rounded-md text-sm" appearance="fill">
-            <mat-label>Number of Passangers</mat-label>
-            <input matInput type="number" [(ngModel)]="numberOfPassangers">
-        </mat-form-field>
-        <mat-form-field class="w-1/2 rounded-md text-sm" appearance="fill">
-            <mat-label>Date</mat-label>
-            <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate placeholder="Start date" [(ngModel)]="startDate">
-              <input matEndDate placeholder="End date" [(ngModel)]="endDate">
-            </mat-date-range-input>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-date-range-picker #picker></mat-date-range-picker>
-        </mat-form-field>
+<div>
+    <div class="text-center">
+        <div class="m-4 text-2xl text-primaryGreen font-bold">Avtoprevozništvo Topler Web portal for Guests</div>
+        <div class="bg-primaryGreen p-2"></div>
     </div>
-    <!-- Second row -->
-    <div class="flex gap-4">
-        <mat-form-field class="w-1/2 rounded-md text-sm" appearance="fill">
-            <mat-label>Travel Route</mat-label>
-            <textarea 
+    <div class="mr-20 mt-8 m-14">
+        <!-- Inputs -->
+        <!-- First row -->
+        <div class="flex gap-4">
+            <mat-form-field class="w-1/2 rounded-md" appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" [(ngModel)]="firstName">
+            </mat-form-field>
+            <mat-form-field class="w-1/2 rounded-md" appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" [(ngModel)]="lastName">
+            </mat-form-field>
+        </div>
+        <!-- Second row -->
+        <div class="flex gap-4">
+            <mat-form-field class="w-1/2 rounded-md" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email"  [(ngModel)]="email">
+            </mat-form-field>
+            <mat-form-field class="w-1/2 rounded-md" appearance="fill">
+                <mat-label>Phone number</mat-label>
+                <input matInput type="text"  [(ngModel)]="phoneNumber">
+            </mat-form-field>
+        </div>
+        <!-- Third row -->
+        <div class="flex gap-4">
+            <mat-form-field class="w-1/2 rounded-md text-sm" appearance="fill">
+                <mat-label>Number of Passangers</mat-label>
+                <input matInput type="number" [(ngModel)]="numberOfPassangers">
+            </mat-form-field>
+            <mat-form-field class="w-1/2 rounded-md text-sm" appearance="fill">
+                <mat-label>Date</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                  <input matStartDate placeholder="Start date" [(ngModel)]="startDate">
+                  <input matEndDate placeholder="End date" [(ngModel)]="endDate">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+        </div>
+        <!-- Fourth row -->
+        <div class="flex gap-4">
+            <mat-form-field class="w-1/2 rounded-md text-sm" appearance="fill">
+                <mat-label>Travel Route</mat-label>
+                <textarea
+                    matInput
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="10"
+                    [(ngModel)]="travelRoute"></textarea>
+            </mat-form-field>
+            <mat-form-field class="w-1/2 rounded-md text-sm" appearance="fill">
+                <mat-label>Type of Transport</mat-label>
+                <mat-select [(ngModel)]="typeOfTransport">
+                  <mat-option value="option1">Passangers transport</mat-option>
+                  <mat-option value="option2">Goods transport</mat-option>
+                  <mat-option value="option3">One day trip</mat-option>
+                  <mat-option value="option4">Journey</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- Fifth row -->
+        <mat-form-field class="w-full rounded-md text-sm" appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea
                 matInput
                 cdkTextareaAutosize
                 #autosize="cdkTextareaAutosize"
                 cdkAutosizeMinRows="1"
                 cdkAutosizeMaxRows="10"
-                [(ngModel)]="travelRoute"></textarea>
+                [(ngModel)]="description"></textarea>
         </mat-form-field>
-        <mat-form-field class="w-1/2 rounded-md text-sm" appearance="fill">
-            <mat-label>Type of Transport</mat-label>
-            <mat-select [(ngModel)]="typeOfTransport">
-              <mat-option value="option1">Passangers transport</mat-option>
-              <mat-option value="option2">Goods transport</mat-option>
-              <mat-option value="option3">One day trip</mat-option>
-              <mat-option value="option4">Journey</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
-    <!-- Third row -->
-    <mat-form-field class="w-full rounded-md text-sm" appearance="fill">
-        <mat-label>Description</mat-label>
-        <textarea 
-            matInput
-            cdkTextareaAutosize
-            #autosize="cdkTextareaAutosize"
-            cdkAutosizeMinRows="1"
-            cdkAutosizeMaxRows="10"
-            [(ngModel)]="description"></textarea>
-    </mat-form-field>
-    <div class="flex justify-end">
-        <div class="bg-primaryGreen text-white rounded p-2 cursor-pointer px-3" (click)="addApplication()">Send</div>
+        <div class="flex justify-end">
+            <div class="bg-primaryGreen text-white rounded p-2 cursor-pointer px-3" (click)="addApplication()">Send</div>
+        </div>
     </div>
 </div>

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ApplicationStatusEnum } from 'src/app/core/enum/application-status.enum';
 import { Application } from 'src/app/core/models/application.model';
 import { ApplicationsService } from 'src/app/core/services/applications.service';
+import { MenuService } from 'src/app/core/services/menu.service';
 
 @Component({
   selector: 'admin-applications',
@@ -19,7 +20,8 @@ export class AdminApplicationsComponent implements OnInit{
     public discount: number = 0;
 
     constructor(
-      private applicationsService: ApplicationsService
+      private applicationsService: ApplicationsService,
+      private menuService: MenuService
     ){
       applicationsService.applications.subscribe((result: Array<Application>) => {
         this.applications = result;
@@ -55,5 +57,7 @@ export class AdminApplicationsComponent implements OnInit{
       application.status = ApplicationStatusEnum.Processing;
 
       this.applicationsService.updateApplication(application);
+
+      this.menuService.setMenuPage('in-proces');
     }
 }

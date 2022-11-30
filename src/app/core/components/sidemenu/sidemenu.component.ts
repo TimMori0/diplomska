@@ -15,13 +15,8 @@ export class SidemenuComponent implements OnInit{
 
   constructor(
     private route: Router,
-    private usersService: UsersService,
     private menuService: MenuService
   ){
-    usersService.user.subscribe((result: User) => {
-      console.log(result)
-      this.userType = result.type;
-    });
   }
 
   ChangeContent(page: string){
@@ -34,6 +29,7 @@ export class SidemenuComponent implements OnInit{
   }
   
   ngOnInit(){
-    console.log(this.userType);
+    var user = JSON.parse(localStorage.getItem('lastLoggedUser') || '{}');
+    this.userType = user.type;
   }
 }

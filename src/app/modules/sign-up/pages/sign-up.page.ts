@@ -39,6 +39,7 @@ export class SignUpPage {
       this.newUser.id = users.length + 1;
 
       this.userService.setUser(this.newUser);
+      localStorage.setItem('lastLoggedUser', JSON.stringify(this.newUser));
       users.push(this.newUser);
 
       localStorage.setItem('users', JSON.stringify(users));

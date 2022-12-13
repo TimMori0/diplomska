@@ -14,11 +14,11 @@ import { UsersService } from './services/users.service';
 })
 export class AppComponent implements OnInit {
   public lastLoggedUser: User = new User();
-  public basic: User = new User(1,'Janez', 'Novak', 'janez.novak@gmail.com', 'basic' , '031333333', UserTypeEnum.Basic);
-  public admin: User = new User(2,'Franc', 'Kranjc', 'franc.kranjc@gmail.com', 'admin' , '066895555', UserTypeEnum.Admin);
-  public application1: Application = new Application(1, 'Janez', 'Novak', 'janez.novak@gmail.com', '031333333', 17, "13.11.2022", "13.11.2022", "Muta-Vuzenica", "Začetek bi bil na Muti pri gasilkem domu, nato bi pobirali po dravski dolini do Ožbalta", ApplicationStatusEnum.Sent, TransportTypeEnum.PassangersTransport, "Ford Transit", 500.2, 10);
-  public application2: Application = new Application(2, 'Janez', 'Novak', 'janez.novak@gmail.com', '031333333', 7, "20.9.2022", "20.9.2022", "Maribor - Graz - SG - Vuzenica - DRG - Koper - Portorož - Maribor - Vuzenica", "Hodili bi cel dan, največ časa bi se zadrževali v Kopru in Portorožu.", ApplicationStatusEnum.Processing, TransportTypeEnum.GoodsTransport, "Ford Transit", 500.2, 10);
-  public application3: Application = new Application(3, 'Janez', 'Novak', 'janez.novak@gmail.com', '031333333', 2, "25.12.2022", "27.12.2022", "Vuzenica-Benetke", "Peljali bi nas na letališče let je ob 3:40", ApplicationStatusEnum.Accepted, TransportTypeEnum.PassangersTransport, "Ford Transit", 500.2, 10);
+  public basic: User = new User(1,'Janez', 'Novak', 'basic@gmail.com', 'basic' , '031333333', UserTypeEnum.Basic);
+  public admin: User = new User(2,'Franc', 'Kranjc', 'admin@gmail.com', 'admin' , '066895555', UserTypeEnum.Admin);
+  public application1: Application = new Application(1, 'Janez', 'Novak', 'basic@gmail.com', '031333333', 17, "13.11.2022", "13.11.2022", "Muta-Vuzenica", "Začetek bi bil na Muti pri gasilkem domu, nato bi pobirali po dravski dolini do Ožbalta", ApplicationStatusEnum.Sent, TransportTypeEnum.PassangersTransport, "", 0, 0);
+  public application2: Application = new Application(2, 'Janez', 'Novak', 'basic@gmail.com', '031333333', 7, "20.9.2022", "20.9.2022", "Maribor - Graz - SG - Vuzenica - DRG - Koper - Portorož - Maribor - Vuzenica", "Hodili bi cel dan, največ časa bi se zadrževali v Kopru in Portorožu.", ApplicationStatusEnum.Processing, TransportTypeEnum.GoodsTransport, "Ford Transit", 500.2, 10);
+  public application3: Application = new Application(3, 'Janez', 'Novak', 'basic@gmail.com', '031333333', 2, "25.12.2022", "27.12.2022", "Vuzenica-Benetke", "Peljali bi nas na letališče let je ob 3:40", ApplicationStatusEnum.Accepted, TransportTypeEnum.PassangersTransport, "Ford Transit", 500.2, 10);
 
   public users: Array<User> = new Array<User>();
   public applications: Array<Application> = new Array<Application>();

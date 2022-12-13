@@ -41,8 +41,8 @@ export class AppComponent implements OnInit {
     // localStorage.setItem('users', JSON.stringify(this.users));
     // localStorage.setItem('applications', JSON.stringify(this.applications));
 
-    // this.lastLoggedUser = JSON.parse(localStorage.getItem('lastLoggedUser') || '{}'); 
-    // this.userService.setUser(this.lastLoggedUser);
+    this.lastLoggedUser = JSON.parse(localStorage.getItem('lastLoggedUser') || '{}'); 
+    this.userService.setUser(this.lastLoggedUser);
 
     if(this.lastLoggedUser.type == 'admin'){
       this.menuService.setMenuPage('all-application');

@@ -12,6 +12,7 @@ import { UsersService } from 'src/app/core/services/users.service';
 })
 export class ApplicationsComponent {
     public applications: Array<Application> = new Array<Application>();
+    public tmp: Array<Application> = new Array<Application>();
     public user: User = new User();
 
     constructor(
@@ -20,11 +21,19 @@ export class ApplicationsComponent {
     ){
         applicationsService.applications.subscribe((result: Array<Application>) => {
             console.log(result);
-            this.applications = result;
+            this.tmp = result;
         });
 
         userService.user.subscribe((result: User) => {
             this.user = result;
+        });
+
+        this.tmp.forEach((app: Application) => {
+            console.log(app.email, this.user.email, "TULEELELELE")
+            if(app.email == this.user.email)
+            {
+                this.applications.push(app);
+            }
         });
     }
 
